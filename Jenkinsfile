@@ -45,11 +45,11 @@ pipeline {
     }
 
 
-        // display test results stage (publishing reports)
-        post{
-          // always -> always run irrespective of pipeline success or failure
-          always{
-              junit 'test-results/junit.xml'
-          }
-        }
+  // display test results stage (publishing reports)
+  post{
+    // always -> always run irrespective of pipeline success or failure
+    always{
+        junit 'test-results/junit.xml'
+    }
+  }
 }
