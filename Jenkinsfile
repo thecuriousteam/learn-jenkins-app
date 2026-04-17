@@ -49,8 +49,7 @@ pipeline {
 
           agent{
             docker{
-              image 'mcr.microsoft.com/playwright:v1.39.0-noble'
-              reuseNode true
+            image 'mcr.microsoft.com/playwright:v1.39.0-jammy'              reuseNode true
 
               // this needs to run as administrator
             }
