@@ -23,6 +23,8 @@ pipeline {
                 '''
             }
         }
+
+        // test stage
         stage('test'){
 
           agent{
@@ -40,5 +42,15 @@ pipeline {
             '''
           }
         }
+
+
+        // display test results stage (publishing reports)
+        post{
+          // always -> always run irrespective of pipeline success or failure
+          always{
+              junit 'test-results/junit.xml'
+          }
+        }
+
     }
 }
