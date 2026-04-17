@@ -72,7 +72,7 @@ pipeline {
   post{
     // always -> always run irrespective of pipeline success or failure
     always{
-        junit 'test-results/junit.xml'
+        junit 'jest-results/junit.xml'
     }
   }
 }
