@@ -59,7 +59,8 @@ pipeline {
             sh '''
             echo "Performing end to end test"
             npm install serve
-            node_modules/.bin/serve -s build 
+            node_modules/.bin/serve -s build &
+            sleep 10
             npx playwright test
             '''
           }
