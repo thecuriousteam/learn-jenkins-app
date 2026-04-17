@@ -42,6 +42,7 @@ pipeline {
             '''
           }
         }
+    }
 
 
         // display test results stage (publishing reports)
@@ -51,6 +52,4 @@ pipeline {
               junit 'test-results/junit.xml'
           }
         }
-
-    }
 }
