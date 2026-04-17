@@ -42,6 +42,28 @@ pipeline {
             '''
           }
         }
+
+
+         // test stage
+        stage('end to end test'){
+
+          agent{
+            docker{
+              image 'mcr.microsoft.com/playwright:v1.58.2-noble'
+              reuseNode true
+
+              // this needs to run as administrator
+            }
+          }
+          steps{
+            sh '''
+            echo "Performing end to end test"
+            npm install serve
+            node_modules/.bin/serve -s build 
+            npx playwright test
+            '''
+          }
+        }
     }
 
 
