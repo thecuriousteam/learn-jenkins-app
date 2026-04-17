@@ -73,6 +73,9 @@ pipeline {
     // always -> always run irrespective of pipeline success or failure
     always{
         junit 'jest-results/junit.xml'
+
+        // publishing html report generated from pipeline syntax
+publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright HTML Report', reportTitles: '', useWrapperFileDirectly: true])        
     }
   }
 }
